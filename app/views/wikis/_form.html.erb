@@ -1,0 +1,11 @@
+<div class="col-md-8">
+  <%= form_for @wiki do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+     
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+     
+    <%= f.submit "Save" %>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+ <h1>Edit Wiki</h1>
+ 
+ <div class="row">
+   <div class="col-md-4">
+     <p>Guidelines for wikis</p>
+     <ul>
+       <li>Create clear,concise and relevant wikis.</li>
+       <li>Ensure that the wiki content is truthful and accurate.</li>
+       <li>Omit profane and obscene words.</li>
+     </ul>
+   </div>
+   <%= render partial: 'wikis/form', locals: { wiki: @wiki } %>
+ </div>
