@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :wikis, except: [:index]
+  resources :wikis
 
   devise_for :users
   
