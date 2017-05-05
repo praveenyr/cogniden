@@ -51,6 +51,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootswatch-rails (3.3.5)
+      railties (>= 3.1)
     builder (3.2.3)
     byebug (9.0.6)
     coderay (1.1.1)
@@ -122,6 +124,9 @@ GEM
     puma (3.8.2)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
+    pundit-matchers (1.2.3)
+      pundit (~> 1.1, >= 1.1.0)
+      rspec-rails (>= 3.0.0)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -241,6 +246,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootswatch-rails
   byebug
   coffee-rails (~> 4.2)
   devise
@@ -254,6 +260,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.0)
   pundit
+  pundit-matchers (~> 1.2.3)
   rails (~> 5.0.1)
   rails-controller-testing
   rails_12factor

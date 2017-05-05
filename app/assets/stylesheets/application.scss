@@ -14,4 +14,6 @@
  *= require_self
  */
  @import "bootstrap-sprockets";
+ @import "bootswatch/journal/variables";
  @import "bootstrap";
+ @import "bootswatch/journal/bootswatch";
