@@ -18,6 +18,7 @@ User.create!(
 admin = User.create!(
    email:    'admin@example.com',
    password: 'helloworld',
+   confirmed_at: '2016-08-14'
 )
 admin.add_role :admin
 
