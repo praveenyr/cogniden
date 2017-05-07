@@ -1,15 +1,19 @@
 <div class="row">
    <div class="col-md-8">
      <h2 class="text-center" style="margin: 20px;"><u>My wikis</u></h2>
-     <% policy_scope(@wikis).each do |wiki| %>
-         <div class="media" style="margin: 40px;">
-           <div class="media-body">
-             <h4 class="media-heading text-center">
-               <%= link_to wiki.title, wiki %>
-             </h4>
+     <% if policy_scope(@wikis).count > 0 %>
+       <% policy_scope(@wikis).each do |wiki| %>
+           <div class="media" style="margin: 40px;">
+             <div class="media-body">
+               <h4 class="media-heading text-center">
+                 <%= link_to wiki.title, wiki %>
+               </h4>
+             </div>
            </div>
-         </div>
-     <% end %>
+       <% end %>
+      <% else %>
+         <h2 class="text-center" style="margin: 20px;">You do not have any wikis yet!Create one using the 'New Wiki' button.</h2> 
+      <% end %>
    </div>
    <div class="col-md-4">
      <div style="margin: 20px;">

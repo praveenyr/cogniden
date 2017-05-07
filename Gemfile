@@ -15,6 +15,7 @@ end
     gem 'faker'
     gem 'factory_girl_rails'
     gem 'simplecov'
+    gem 'pundit-matchers', '~> 1.2.3'
   end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -74,3 +75,4 @@ gem 'bootstrap-sass'
 gem 'figaro', '1.0'
 gem 'rolify'
 gem 'pundit'
+gem 'bootswatch-rails'
