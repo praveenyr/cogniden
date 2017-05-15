@@ -1,4 +1,0 @@
-<% if current_user.has_role? :premium %>
-    <h4>Click to downgrade to Standard user!</h4>
-    <%= link_to "Downgrade", method: :downgrade, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to downgrade to standard user and relinquish power?' } %>
-<% end %>  
