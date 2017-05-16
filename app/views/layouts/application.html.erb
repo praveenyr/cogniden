@@ -21,7 +21,7 @@
             <%= link_to current_user.email, edit_user_registration_path, :class => 'navbar-link' %>
             </br>
             <% if current_user.has_role? :premium %>
-              Premium User |  <%= link_to "Downgrade", downgrade_charge_path %>
+              Premium User |  <%= link_to "Downgrade", downgrade_path, method: :post %>
             <% else %>  
               Standard User |  <%= link_to "Upgrade", new_charge_path %>
             <% end %>
