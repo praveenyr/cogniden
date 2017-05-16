@@ -11,6 +11,10 @@ class WikiPolicy < ApplicationPolicy
   def edit?
     user.has_role?(:admin) || record.user ==  user
   end
+  
+  def create?
+    user.present?
+  end
 
   def show?
     user.present?
