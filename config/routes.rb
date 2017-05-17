@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   resources :wikis
+  
+  get 'public_wikis' => 'wikis#public_wikis', :as => 'public_wikis'
 
   devise_for :users
 

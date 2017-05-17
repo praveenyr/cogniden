@@ -35,7 +35,7 @@ class ChargesController < ApplicationController
   def downgrade
     current_user.remove_role :premium
     Wiki.downgrade(current_user)
-    flash[:notice] = "Awww! You've been downgraded to a standard user!"
+    flash[:notice] = "Awww! You've been downgraded to a standard user.Your private wikis will be made public!"
     redirect_to root_path
   end
 end
