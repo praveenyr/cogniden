@@ -1,8 +1,8 @@
 <div class="row">
    <div class="col-md-10">
      <h2 class="text-center" style="margin: 20px;"><u>My wikis</u></h2>
-     <% if policy_scope(@wikis).count > 0 %>
-       <% policy_scope(@wikis).each do |wiki| %>
+     <% if @wikis.count > 0 %>
+       <% @wikis.each do |wiki| %>
            <div class="media" style="margin: 40px;">
              <div class="media-body">
                <h4 class="media-heading text-center">
