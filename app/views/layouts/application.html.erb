@@ -14,6 +14,7 @@
     <ul class="nav nav-tabs">
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to 'Your wikis', wikis_path %></li>
+      <li><%= link_to 'All wikis', public_wikis_path %></li>
 
       <div class="pull-right user-info">
         <% if user_signed_in? %>
