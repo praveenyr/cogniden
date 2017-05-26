@@ -19,6 +19,6 @@ class CollaboratorsController < ApplicationController
   private
   
   def collaborator_params
-    params.require(:collaborator).permit(:wiki, :user)
+    params.require(:collaborator).permit(:wiki_id, :user_id)
   end
 end
