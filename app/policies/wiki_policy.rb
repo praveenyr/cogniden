@@ -23,10 +23,20 @@ class WikiPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
+      wikis = []
       if user.has_role?(:admin)
-        scope.all
-      else
-        scope.where(user: user)
+        wikis = scope.all
+      # else
+      #   scope.where(user: user)
+      # end
+      elsif user.has_role?(:premium)
+       all_wikis = scope.all
+         all_wikis.each do |wiki|
+          if (record.user == user || record.collaborators.include?(user))
+              wikis << wiki
+          end
+         end
+         wikis
       end
     end
   end
