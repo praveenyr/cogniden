@@ -11,8 +11,8 @@
      <%= form_for @wiki do |f| %>
        <%= f.label :add_Collaborators %><br>
        <%= f.select :collaborators, @allcollaborators.map{ |collaborator| collaborator.email }, :prompt => 'Select a collaborator' %><br>
-       <%= render partial: 'collaborators/collaborator' %>
      <% end %>
+     <%= render partial: 'collaborators/collaborator' %>
    </div>
    <!--<%= render partial: 'wikis/form', locals: { wiki: @wiki } %>-->
  </div>
