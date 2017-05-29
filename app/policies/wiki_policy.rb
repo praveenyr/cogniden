@@ -32,7 +32,7 @@ class WikiPolicy < ApplicationPolicy
       elsif user.has_role?(:premium)
        all_wikis = scope.all
          all_wikis.each do |wiki|
-          if (record.user == user || record.collaborators.include?(user))
+          if (wiki.user == user || wiki.collaborators.include?(user))
               wikis << wiki
           end
          end
