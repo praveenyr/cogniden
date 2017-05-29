@@ -25,4 +25,21 @@ RSpec.describe CollaboratorsController, type: :controller do
     end
   end
   
+  describe "DELETE destroy" do
+    it "deletes the collaborator" do
+      post :create, collaborator: { wiki_id: @my_wiki.id, user_id: @my_collaborator.id }
+      collaborator_instance = assigns(:collaborator)
+      delete :destroy, id: collaborator_instance.id
+      count = Collaborator.where({id: collaborator_instance.id}).size
+      expect(count).to eq 0
+    end
+
+    it "redirects to Wiki" do
+      post :create, collaborator: { wiki_id: @my_wiki.id, user_id: @my_collaborator.id }
+      collaborator_instance = assigns(:collaborator)
+      delete :destroy, id: collaborator_instance.id
+      expect(response).to redirect_to collaborator_instance.wiki
+    end
+  end
+  
 end

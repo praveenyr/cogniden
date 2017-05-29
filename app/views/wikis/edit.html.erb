@@ -8,11 +8,13 @@
        <li>Ensure that the wiki content is truthful and accurate.</li>
        <li>Omit profane and obscene words.</li>
      </ul>
+     <%= form_for(@wiki) do |f| %>
+       <%= f.label :add_Collaborators %><br>
+       <%= f.select :collaborators, @allcollaborators.map{ |collaborator| collaborator.email }, :prompt => 'Select a collaborator' %><br>
+       <div class="form-group" style="margin-top: 10px;" >
+         <%= f.submit "Add", class: 'btn btn-success' %>
+       </div>
+     <% end %>
    </div>
    <%= render partial: 'wikis/form', locals: { wiki: @wiki } %>
-   <div class="form-group">
-    <p>Collaborators</p>
-    <% collaborators = @wiki.collaborators %>
-    <% end %>
-  </div>  
  </div>
