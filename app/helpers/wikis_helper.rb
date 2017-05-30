@@ -7,7 +7,7 @@ module WikisHelper
     end
   end
   
-  def permit_collaboration?(current_user)
-    (current_user.has_role? :premium) || (current_user.has_role? :admin)
+  def permit_collaboration?(wiki, current_user)
+     (current_user.has_role? :admin) || ((current_user.has_role? :premium) && (wiki.user == current_user))
   end
 end

@@ -4,10 +4,10 @@ class CollaboratorsController < ApplicationController
     @collaborator = Collaborator.new(collaborator_params)
     
     if @collaborator.save
-      flash[:notice] = "Collaborator has been successfully added.Yay!"
+      flash[:notice] = "\"#{@collaborator.user.email}\" has been successfully added.Yay!"
       redirect_to Wiki.find_by(params[:collaborator][:wiki_id])
     else
-      flash.now[:alert] = "Bummer!There was an error adding the collaborator:( .Please try again."
+      flash.now[:alert] = "Bummer!There was an error adding the collaborator \"#{@collaborator.user.email}\" :( .Please try again."
       redirect_to Wiki.find_by(params[:collaborator][:wiki_id])
     end  
   end
