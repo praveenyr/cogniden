@@ -1,18 +1,30 @@
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-10">
      <h2 class="text-center">
        <strong><u><%= @wiki.title %></u></strong>
      </h2>
+     <div class="text-info" style="margin: 20px; font-size: 18px;">
+        <p><%= markdown(@wiki.body) %></p>
+     </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
      <div style="margin-top: 25px;">
-      <%= link_to "Edit Wiki", edit_wiki_path, class: 'btn btn-success' %>
+      <%= link_to "Edit Wiki", edit_wiki_path, class: 'btn btn-success btn-sm' %>
      </div>
      <div style="margin-top: 4px;">
-     <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this wiki?Think long and hard!' } %>
+      <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure you want to delete this wiki?Think long and hard!' } %>
      </div>
+     <% if permit_collaboration?(@wiki, current_user) %>
+       <div style="margin-top: 20px;">
+        <h4><strong>Collaborators</strong></h4>
+         <% @wiki.collaborators.each do |collaborator| %>
+             <%= link_to collaborator.user.email %><br>
+         <% end %>
+       </div>
+       <div style="margin-top: 20px;">
+        <p>Add/Remove Collaborators using 'Edit wiki'.</p>
+       </div>
+     <% end %>
     </div>
   </div>
-   <div class="text-info" style="margin: 10px; font-size: 18px;">
-     <p><%= markdown(@wiki.body) %></p>
-   </div>
+

@@ -1,7 +1,7 @@
 class WikiPolicy < ApplicationPolicy
 
   def update?
-    user.has_role?(:admin) || record.user ==  user
+    (user.has_role?(:admin) || record.user ==  user) || record.collaborators.include?(Collaborator.find_by_user_id(user.id))
   end
 
   def destroy?
@@ -9,7 +9,7 @@ class WikiPolicy < ApplicationPolicy
   end
 
   def edit?
-    user.has_role?(:admin) || record.user ==  user
+    (user.has_role?(:admin) || record.user ==  user) || record.collaborators.include?(Collaborator.find_by_user_id(user.id))
   end
   
   def create?
@@ -22,13 +22,27 @@ class WikiPolicy < ApplicationPolicy
 
 
   class Scope < Scope
+    
+    attr_reader :user, :scope
+
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+    
     def resolve
+      wikis = []
       if user.has_role?(:admin)
-        scope.all
-      else
-        scope.where(user: user)
+        wikis = scope.all
+      else 
+       all_wikis = scope.all
+         all_wikis.each do |wiki|
+          if (wiki.user == user || wiki.collaborators.include?(Collaborator.find_by_user_id(user.id)))
+              wikis << wiki
+          end
+         end
+         wikis
       end
     end
   end
-
 end

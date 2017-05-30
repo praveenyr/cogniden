@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :wikis
+  resources :collaborators, only: [:create, :destroy]
   
   get 'public_wikis' => 'wikis#public_wikis', :as => 'public_wikis'
 

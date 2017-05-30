@@ -8,6 +8,14 @@
        <li>Ensure that the wiki content is truthful and accurate.</li>
        <li>Omit profane and obscene words.</li>
      </ul>
+     <% if permit_collaboration?(@wiki, current_user) %>
+       <%= render partial: 'dropdown' %><br>
+       <p style="font-size: 17px"><strong>Remove collaborators</strong></p>
+       <% @wiki.collaborators.each do |collaborator| %>
+         <%= collaborator.user.email %>
+         <%= link_to 'Remove', collaborator_path(collaborator), data: { confirm: 'Are you sure?' }, :style => "margin-left: 40px", method: :delete %>
+       <% end %>
+     <% end %>
    </div>
    <%= render partial: 'wikis/form', locals: { wiki: @wiki } %>
  </div>
