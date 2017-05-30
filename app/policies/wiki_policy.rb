@@ -26,10 +26,7 @@ class WikiPolicy < ApplicationPolicy
       wikis = []
       if user.has_role?(:admin)
         wikis = scope.all
-      # else
-      #   scope.where(user: user)
-      # end
-      elsif user.has_role?(:premium)
+      else 
        all_wikis = scope.all
          all_wikis.each do |wiki|
           if (wiki.user == user || wiki.collaborators.include?(user))
@@ -40,5 +37,4 @@ class WikiPolicy < ApplicationPolicy
       end
     end
   end
-
 end
