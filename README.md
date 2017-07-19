@@ -1,6 +1,6 @@
 # Cogniden
 
-![Cogniden-img](https://github.com/praveenyr/praveenyr.github.io/tree/master/img/cogniden-main.png)
+![Cogniden-img](/app/assets/images/cogniden-main.png)
 
 ## _Explanation_
 
