@@ -1,6 +1,5 @@
 # Cogniden
 
-{:.center}
 ![](https://github.com/praveenyr/praveenyr.github.io/tree/master/img/cogniden-main.png }})
 
 ## _Explanation_
