@@ -8,7 +8,7 @@ Cogniden enables users to capture a wealth of information,create and distribute 
 >Indeed, the purpose of an encyclopedia is to collect knowledge disseminated around the globe; to set forth its general system to the men with whom we live, and transmit it to those who will come after us, so that the work of preceding centuries will not become useless to the centuries to come; and so that our offspring, becoming better instructed, will at the same time become more virtuous and happy, and that we should not die without having rendered a service to the human race
 —***Diderot***
 
-Cogniden has been built with the Ruby on Rails(5.0) web development framework.
+Cogniden has been built with the Ruby on Rails(5.0.1) web development framework.
 
 
 ## _User Stories_
@@ -70,41 +70,70 @@ The screenshots below depicts the various user stories for Cogniden and the gran
 * **User Sign up ,Sign up confirmation and Sign in**.
 A new user signs up with email and password, confirms his email and is then redirected to the sign in page.
 
-![sign up](/img/signup.png "Sign Up")
+![sign up](/app/assets/images/signup.png "Sign Up")
 
-![sign up conf](/img/signupconfirmation.png "Sign Up Confirmation")
+![sign up conf](/app/assets/images/signupconfirmation.png "Sign Up Confirmation")
 
-![sign in](/img/signin.png "Sign Up Confirmation")
+![sign in](/app/assets/images/signin.png "Sign Up Confirmation")
 
 #### User upgrade
 ------------------
 * A user is assigned a standard role by default.To create private _wikis_,he can upgrade to _premium_.This is illustrated with stripe payment using the below screenshots.
 
-![upgrade user](/img/upgradeuser.png "Upgrade User")
+![upgrade user](/app/assets/images/upgradeuser.png "Upgrade User")
 
-![pay with card](/img/paywithcard.png "Pay With Card")
+![pay with card](/app/assets/images/paywithcard.png "Pay With Card")
 
-![CC details](/img/stripepayment.png "CC details")
+![CC details](/app/assets/images/stripepayment.png "CC details")
 
-![premium user](/img/premiumuser.png "Premium User")
+![premium user](/app/assets/images/premiumuser.png "Premium User")
 
 #### Markdown
 ------------------
 * Create a _wiki_ using Markdown syntax
 
-![create wiki](/img/markdownsyntax.png "create wiki")
+![create wiki](/app/assets/images/markdownsyntax.png "create wiki")
 
-![show wiki](/img/markdownsyntax_confirmation.png "show wiki")
+![show wiki](/app/assets/images/markdownsyntax_confirmation.png "show wiki")
 
 #### Collaboration
 ------------------
 * Add a collaborator to a private wiki,then login as collaborator and edit the wiki
 
-![add collaborator](/img/addcollaborator.png "add collaborator")
+![add collaborator](/app/assets/images//addcollaborator.png "add collaborator")
 
-![show collaborator](/img/collaboratoradded.png "show collaborator")
+![show collaborator](/app/assets/images/collaboratoradded.png "show collaborator")
 
-![edit as collaborator](/img/collaboratoredited.png "edit as collaborator")
+![edit as collaborator](/app/assets/images/collaboratoredited.png "edit as collaborator")
 
-![show collaborator edits](/img/showeditsforcollaborator.png "show collaborator edits")
+![show collaborator edits](/app/assets/images/showeditsforcollaborator.png "show collaborator edits")
+
+## Run _Cogniden_ App
+
+1. Clone github project
+
+    `>git clone git@github.com:praveenyr/cogniden.git`
+
+3. Install Dependencies from gem file
+
+    `> bundle install`
+
+2. Create development database and seed database
+
+    `rake db:reset`
+    
+3. Start the app in development environment
+
+    'rails s'
+    
+4.  Rspec tests
+
+    ..1. Set Rails Env variable to _test_ 
+        `RAILS_ENV=test`
+    ..2. Run db migrations in test environment.
+        `rake db:migrate`
+    ..3. Run rspec tests
+         rspec /spec/controllers/<controller>
+    
+    
 
