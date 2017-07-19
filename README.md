@@ -124,16 +124,21 @@ A new user signs up with email and password, confirms his email and is then redi
     
 3. Start the app in development environment
 
-    'rails s'
+    `rails s`
     
 4.  Rspec tests
 
     ..1. Set Rails Env variable to _test_ 
+    
         `RAILS_ENV=test`
+        
     ..2. Run db migrations in test environment.
+    
         `rake db:migrate`
+        
     ..3. Run rspec tests
-         rspec /spec/controllers/<controller>
+    
+         `rspec /spec/controllers/<controller>`
     
     
 
