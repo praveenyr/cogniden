@@ -1,15 +1,7 @@
-# README
-
----
-layout: post
-title: Cogniden
-thumbnail-path: "img/cogniden-main.png"
-short-description: Build a replica of wikipedia to create,share and collaborate wikis.
-
----
+# Cogniden
 
 {:.center}
-![](/img/cogniden-main.png }})
+![](https://github.com/praveenyr/praveenyr.github.io/tree/master/img/cogniden-main.png }})
 
 ## _Explanation_
 
